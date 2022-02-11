@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".CadastrarActivity">
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="263dp"
+        android:layout_height="118dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="1383dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="191dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="1355dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="263dp"
+        android:layout_height="118dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="648dp"
+        tools:layout_editor_absoluteY="1375dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="829dp"
+        android:layout_height="106dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
