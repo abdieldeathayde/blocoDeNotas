@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CadastrarActivity">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="263dp"
-        android:layout_height="118dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="1383dp" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -26,26 +18,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="1355dp" />
+        app:layout_constraintGuide_begin="955dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="263dp"
-        android:layout_height="118dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="648dp"
-        tools:layout_editor_absoluteY="1375dp" />
+        android:id="@+id/btnSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        tools:layout_editor_absoluteX="651dp"
+        tools:layout_editor_absoluteY="1040dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="829dp"
-        android:layout_height="106dp"
+        android:id="@+id/edTitulo"
+        android:layout_width="854dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="titulo"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtxt"
+        android:layout_width="848dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
