@@ -26,9 +26,14 @@ public class NotaDao {
         return nota;
     }
     public Nota updateNota (Nota nota){
-        return new Nota("a", "a");
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("titulo", nota.getTitulo());
+        contentValues.put("txt", nota.getTxt());
+        sqLiteDatabase.update("nota", contentValues, "id = ?", new String[] {Integer.toString(nota.getId())});
+        return nota;
     }
     public boolean deleteNota (Nota nota){
+        sqLiteDatabase.delete("nota", "id = ?", new String[] {Integer.toString(nota.getId())});
         return true;
     }
     @SuppressLint("Range")
@@ -45,8 +50,13 @@ public class NotaDao {
         } while(cursor.moveToNext());
         return notaArrayList;
     }
+    @SuppressLint("Range")
     public Nota getNota(int id){
-        return new Nota("a", "a");
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM nota WHERE id="+id, null);
+        cursor.moveToFirst();
+        return new Nota(cursor.getInt(cursor.getColumnIndex("id")),
+                cursor.getString(cursor.getColumnIndex("titulo")),
+                cursor.getString(cursor.getColumnIndex("txt")));
     }
 
 }

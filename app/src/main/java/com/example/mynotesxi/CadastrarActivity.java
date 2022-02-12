@@ -39,5 +39,6 @@ public class CadastrarActivity extends AppCompatActivity {
         mNote.setTitulo(edTitulo.getText().toString());
         mNote.setTxt(edTxt.getText().toString());
         mNoteController.cadastrarNota(mNote);
+        finish();
     }
 }

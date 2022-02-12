@@ -3,6 +3,7 @@ package com.example.mynotesxi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,7 +14,7 @@ public class ExibirActivity extends AppCompatActivity {
     NotaController mNotaControler;
     Nota mNota;
     EditText edTitulo, edTxt;
-    Button btnSalvar;
+    Button btnSalvar, btnExcluir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +24,31 @@ public class ExibirActivity extends AppCompatActivity {
         edTitulo = findViewById(R.id.edTitulo);
         edTxt = findViewById(R.id.edtxt);
         btnSalvar = findViewById(R.id.btnSalvar);
-        btnSalvar.setOnClickListener();
+        btnExcluir = findViewById(R.id.btnExcluir);
+        btnExcluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                excluirNota();
+            }
+        });
+        btnSalvar.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v){
+                salvar();
+            }
+        });
     }
+
+    private void excluirNota() {
+        mNotaControler.deleteNota(mNota);
+    }
+
+    private void salvar() {
+        mNota.setTitulo(edTitulo.getText().toString());
+        mNota.setTxt(edTxt.getText().toString());
+        mNotaControler.updateNota(mNota);
+    }
+
     @Override
     protected void onStart(){
         super.onStart();

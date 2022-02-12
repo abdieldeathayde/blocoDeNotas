@@ -21,10 +21,13 @@ public class NotaController {
     public void cadastrarNota(Nota nota){
         mNotaDao.insertNota(nota);
     }
-    public void  updateNota(){
+    public void  updateNota(Nota mNota){
+        mNotaDao.updateNota(mNota);
 
     }
-    public void deleteNota(){
+    public void deleteNota(Nota mNota){
+        mNotaDao.deleteNota(mNota);
+
 
     }
     public ArrayList<Nota> getAllNote(){
@@ -41,7 +44,7 @@ public class NotaController {
 
 
     public Nota getNota(int id){
-        return new Nota("a", "a");
+        return mNotaDao.getNota(id);
     }
 
 
