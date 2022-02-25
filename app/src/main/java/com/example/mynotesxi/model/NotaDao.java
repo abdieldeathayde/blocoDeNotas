@@ -9,14 +9,17 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
 public class NotaDao {
+
+    SQLiteDatabase sqLiteDatabase;
+
     public NotaDao(Context context) {
         sqLiteDatabase = context.openOrCreateDatabase("bd", Context.MODE_PRIVATE, null);
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS nota ( id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS nota ( id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "titulo varchar, " +
                 "txt varchar)");
     }
 
-    SQLiteDatabase sqLiteDatabase;
+
 
     public Nota insertNota(Nota nota){
         ContentValues contentValues = new ContentValues();
@@ -29,11 +32,11 @@ public class NotaDao {
         ContentValues contentValues = new ContentValues();
         contentValues.put("titulo", nota.getTitulo());
         contentValues.put("txt", nota.getTxt());
-        sqLiteDatabase.update("nota", contentValues, "id = ?", new String[] {Integer.toString(nota.getId())});
-        return nota;
+        sqLiteDatabase.update("nota", contentValues, "id=?", new String[] {Integer.toString(nota.getId())});
+        return new Nota("a", "a");
     }
     public boolean deleteNota (Nota nota){
-        sqLiteDatabase.delete("nota", "id = ?", new String[] {Integer.toString(nota.getId())});
+        sqLiteDatabase.delete("nota", "id=?", new String[] {Integer.toString(nota.getId())});
         return true;
     }
     @SuppressLint("Range")

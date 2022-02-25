@@ -15,7 +15,7 @@ public class CadastrarActivity extends AppCompatActivity {
     EditText edTitulo, edTxt;
     Nota mNote;
     NotaController mNoteController;
-    Button btnCadastrar;
+    Button btnSalvar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +23,19 @@ public class CadastrarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar);
         edTitulo = findViewById(R.id.edTitulo);
         edTxt = findViewById(R.id.edtxt);
-        btnCadastrar = findViewById(R.id.btnSalvar);
+        btnSalvar = findViewById(R.id.btnSalvar);
         mNoteController = new NotaController(getApplicationContext());
         mNote = new Nota(edTitulo.getText().toString(), edTxt.getText().toString());
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cadastraNota();
+                cadastrarNota();
             }
         });
     }
 
 
-    private void cadastraNota() {
+    private void cadastrarNota() {
         mNote.setTitulo(edTitulo.getText().toString());
         mNote.setTxt(edTxt.getText().toString());
         mNoteController.cadastrarNota(mNote);

@@ -11,7 +11,7 @@ import com.example.mynotesxi.controller.NotaController;
 import com.example.mynotesxi.model.Nota;
 
 public class ExibirActivity extends AppCompatActivity {
-    NotaController mNotaControler;
+    NotaController mNotaController;
     Nota mNota;
     EditText edTitulo, edTxt;
     Button btnSalvar, btnExcluir;
@@ -19,8 +19,8 @@ public class ExibirActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exibir);
-        mNotaControler = new NotaController(getApplicationContext());
-        mNota = mNotaControler.getNota(getIntent().getExtras().getInt("id"));
+        mNotaController = new NotaController(getApplicationContext());
+        mNota = mNotaController.getNota(getIntent().getExtras().getInt("id"));
         edTitulo = findViewById(R.id.edTitulo);
         edTxt = findViewById(R.id.edtxt);
         btnSalvar = findViewById(R.id.btnSalvar);
@@ -32,7 +32,7 @@ public class ExibirActivity extends AppCompatActivity {
             }
         });
         btnSalvar.setOnClickListener(new View.OnClickListener(){
-
+            @Override
             public void onClick(View v){
                 salvar();
             }
@@ -40,13 +40,13 @@ public class ExibirActivity extends AppCompatActivity {
     }
 
     private void excluirNota() {
-        mNotaControler.deleteNota(mNota);
+        mNotaController.deleteNota(mNota);
     }
 
     private void salvar() {
         mNota.setTitulo(edTitulo.getText().toString());
-        mNota.setTxt(edTxt.getText().toString());
-        mNotaControler.updateNota(mNota);
+        mNota.setTxt(edTitulo.getText().toString());
+        mNotaController.updateNota(mNota);
     }
 
     @Override

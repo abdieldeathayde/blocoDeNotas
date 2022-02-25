@@ -13,7 +13,7 @@ import com.example.mynotesxi.controller.NotaController;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
-    FloatingActionButton floatingActionButton;
+    FloatingActionButton adicionaNota;
     ListView listView;
     NotaController mNotaController;
     @Override
@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
         mNotaController = new NotaController(getApplicationContext());
-        floatingActionButton = findViewById(R.id.floatingActionButton2);
-        floatingActionButton.setOnClickListener(new View.OnClickListener(){
+        adicionaNota = findViewById(R.id.floatingActionButton2);
+        adicionaNota.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 exibirNota(position);
             }
