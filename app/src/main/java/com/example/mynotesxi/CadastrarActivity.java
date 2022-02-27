@@ -29,13 +29,13 @@ public class CadastrarActivity extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cadastrarNota();
+                cadastraNota();
             }
         });
     }
 
 
-    private void cadastrarNota() {
+    private void cadastraNota() {
         mNote.setTitulo(edTitulo.getText().toString());
         mNote.setTxt(edTxt.getText().toString());
         mNoteController.cadastrarNota(mNote);
