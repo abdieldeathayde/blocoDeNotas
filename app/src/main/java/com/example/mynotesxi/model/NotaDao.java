@@ -33,7 +33,7 @@ public class NotaDao {
         contentValues.put("titulo", nota.getTitulo());
         contentValues.put("txt", nota.getTxt());
         sqLiteDatabase.update("nota", contentValues, "id=?", new String[] {Integer.toString(nota.getId())});
-        return new Nota("a", "a");
+        return nota;
     }
     public boolean deleteNota (Nota nota){
         sqLiteDatabase.delete("nota", "id=?", new String[] {Integer.toString(nota.getId())});
